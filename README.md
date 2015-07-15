@@ -14,13 +14,11 @@ To build execute:
 
     $ npm run build
 
-To build and watch:
+To test:
 
-    $ npm run watch
+    $ npm run server
 
-To view:
-
-    $ open dist/index.html
+And open http://localhost:8000 in your browser.
 
 To clean build:
 

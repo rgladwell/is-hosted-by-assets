@@ -20,7 +20,7 @@ module.exports = function (grunt) {
           {
             expand: true,
             cwd: 'assets/',
-            src: ['**'],
+            src: ['**', '!styles/**'],
             dest: 'dist/'
           }
         ],
@@ -110,6 +110,26 @@ module.exports = function (grunt) {
 
     clean: {
       release: ["dist"]
+    },
+
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          base: 'dist',
+          hostname: 'localhost',
+          livereload: true,
+          middleware: function(connect, options, middlewares) {
+            middlewares.unshift(function(req, res, next) {
+                res.setHeader('Access-Control-Allow-Origin', '*');
+                res.setHeader('Access-Control-Allow-Methods', '*');
+                next();
+            });
+
+            return middlewares;
+          }
+        }
+      }
     }
   });
 
@@ -120,7 +140,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-clean');
+  grunt.loadNpmTasks('grunt-contrib-connect');
 
   grunt.registerTask('default', ['copy', 'sass', 'cssmin', 'imagemin']);
   grunt.registerTask('deploy', ['clean', 'default', 'buildcontrol']);
+  grunt.registerTask('run', ['clean', 'default', 'connect', 'watch']);
 };

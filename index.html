@@ -1,11 +1,35 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-  <head>
-    <title>Is Hosted on AWS?</title>
-  </head>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-  <body>
+  <title>Is this hosted on Amazon? Assets</title>
 
-  </body>
+  <script src="vendor/webcomponentsjs/webcomponents-lite.min.js" async></script>
+  <link rel="import" href="assets.html" />
+</head>
+
+<body>
+
+  <assets-header></assets-header>
+
+  <main role="main">
+    <div class="h-index">
+      <header>
+        <h1>Assets</h1>
+        <p>This site hosts assets and example HTML for "Is this hosted on Amazon?"</p>
+      </header>
+
+      <form method="get" action="./" data-rel="next">
+        <input type="text" name="address" placeholder="Address, host or URL (i.e. cnn.com)" />
+      </form>
+    </div>
+  </main>
+
+  <assets-footer></assets-footer>
+
+</body>
+
 </html>

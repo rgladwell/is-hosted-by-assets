@@ -1,0 +1,6 @@
+{
+  "name": "is-aws-assets",
+  "root": "dist/",
+  "clean_urls": true,
+  "error_page": "error.html"
+}

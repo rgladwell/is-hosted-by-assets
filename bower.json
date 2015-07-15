@@ -1,6 +1,7 @@
 {
   "name": "is-aws-assets",
   "version": "1.0.0",
-  "devDependencies": {
+  "dependencies": {
+    "polymer": "Polymer/polymer#^1.0.0"
   }
 }
