@@ -59,21 +59,6 @@ module.exports = function (grunt) {
       }
     },
 
-    buildcontrol: {
-      options: {
-        dir: 'dist',
-        commit: true,
-        push: true,
-        message: 'Built %sourceName% from commit %sourceCommit% on branch %sourceBranch%'
-      },
-      pages: {
-        options: {
-          remote: 'git@github.com:rgladwell/is-aws-assets.git',
-          branch: 'gh-pages'
-        }
-      }
-    },
-
     sass: {
       options: {
         sourceMap: true
@@ -130,19 +115,23 @@ module.exports = function (grunt) {
           }
         }
       }
+    },
+    'divshot:push': {
+      production: {
+      }
     }
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-copy');
-  grunt.loadNpmTasks('grunt-build-control');
   grunt.loadNpmTasks('grunt-sass');
   grunt.loadNpmTasks('grunt-contrib-cssmin');
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.loadNpmTasks('grunt-divshot');
 
   grunt.registerTask('default', ['copy', 'sass', 'cssmin', 'imagemin']);
-  grunt.registerTask('deploy', ['clean', 'default', 'buildcontrol']);
+  grunt.registerTask('deploy', ['clean', 'default', 'divshot:push']);
   grunt.registerTask('run', ['clean', 'default', 'connect', 'watch']);
 };

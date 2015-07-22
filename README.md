@@ -24,6 +24,6 @@ To clean build:
 
     $ npm run clean
 
-To deploy:
+To deploy, [set-up a Divshot](http://docs.divshot.com/guides/getting-started) and run:
 
     $ npm run deploy
