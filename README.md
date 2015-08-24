@@ -1,4 +1,4 @@
-# Is This Hosted On AWS Assets
+# Is This Hosted On AWS Assets [![Codacy Badge](https://www.codacy.com/project/badge/66a7ae11e1fa4d31be11601c4fa0dc79)](https://www.codacy.com/app/ricardo_3/is-aws-assets)
 
 CSS, HTML, image and script assets for "Is This Hosted On AWS" HTML API.
 
