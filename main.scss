@@ -41,6 +41,12 @@ main {
       @extend .text;
     }
   }
+
+  h2.p-invalid-input + form {
+    input[type="text"] {
+      border: solid 1px red;
+    }
+  }
 }
 
 footer {
