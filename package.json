@@ -12,8 +12,8 @@
     "grunt-contrib-cssmin": "^0.12.3",
     "grunt-contrib-imagemin": "^0.9.4",
     "grunt-contrib-watch": "^0.6.1",
-    "grunt-divshot": "^1.0.0",
-    "grunt-sass": "^1.0.0"
+    "grunt-sass": "^1.0.0",
+    "grunt-surge": "^0.6.2"
   },
   "scripts": {
     "postinstall": "bower install",

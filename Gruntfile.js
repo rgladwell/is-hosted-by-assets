@@ -116,8 +116,13 @@ module.exports = function (grunt) {
         }
       }
     },
-    'divshot:push': {
-      production: {
+
+    surge: {
+      'assets.is-hosted-by.com': {
+        options: {
+          project: 'dist/',
+          domain: 'assets.is-hosted-by.com'
+        }
       }
     }
   });
@@ -129,9 +134,9 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-divshot');
+  grunt.loadNpmTasks('grunt-surge');
 
   grunt.registerTask('default', ['copy', 'sass', 'cssmin', 'imagemin']);
-  grunt.registerTask('deploy', ['clean', 'default', 'divshot:push']);
+  grunt.registerTask('deploy', ['clean', 'default', 'surge']);
   grunt.registerTask('run', ['clean', 'default', 'connect', 'watch']);
 };
