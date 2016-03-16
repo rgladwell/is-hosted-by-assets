@@ -24,6 +24,6 @@ To clean build:
 
     $ npm run clean
 
-To deploy, [set-up a Divshot](http://docs.divshot.com/guides/getting-started) and run:
+To deploy, [set-up a Surge.sh](http://surge.sh/) and run:
 
     $ npm run deploy
