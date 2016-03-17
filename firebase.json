@@ -1,0 +1,11 @@
+{
+  "firebase": "is-hosted-by-assets",
+  "public": "dist",
+  "headers": [ {
+    "source" : "**",
+    "headers" : [ {
+      "key" : "Access-Control-Allow-Origin",
+      "value" : "*"
+    } ]
+  } ]
+}

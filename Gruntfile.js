@@ -115,16 +115,8 @@ module.exports = function (grunt) {
           }
         }
       }
-    },
-
-    surge: {
-      'assets.is-hosted-by.com': {
-        options: {
-          project: 'dist/',
-          domain: 'assets.is-hosted-by.com'
-        }
-      }
     }
+
   });
 
   grunt.loadNpmTasks('grunt-contrib-watch');
@@ -134,9 +126,14 @@ module.exports = function (grunt) {
   grunt.loadNpmTasks('grunt-contrib-imagemin');
   grunt.loadNpmTasks('grunt-contrib-clean');
   grunt.loadNpmTasks('grunt-contrib-connect');
-  grunt.loadNpmTasks('grunt-surge');
+
+  grunt.registerTask('firebase', '', function () {
+    var exec = require('child_process').execSync;
+    var result = exec("firebase deploy", { encoding: 'utf8' });
+    grunt.log.writeln(result);
+  });
 
   grunt.registerTask('default', ['copy', 'sass', 'cssmin', 'imagemin']);
-  grunt.registerTask('deploy', ['clean', 'default', 'surge']);
+  grunt.registerTask('deploy', ['clean', 'default', 'firebase']);
   grunt.registerTask('run', ['clean', 'default', 'connect', 'watch']);
 };

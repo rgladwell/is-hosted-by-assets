@@ -24,6 +24,6 @@ To clean build:
 
     $ npm run clean
 
-To deploy, [set-up a Surge.sh](http://surge.sh/) and run:
+To deploy, [set-up a Firebase](https://www.firebase.com/docs/hosting/guide/deploying.html) and run:
 
     $ npm run deploy
