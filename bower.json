@@ -2,6 +2,7 @@
   "name": "is-hosted-by-assets",
   "version": "1.0.0",
   "dependencies": {
-    "polymer": "Polymer/polymer#^1.2.1"
+    "polymer": "Polymer/polymer#^1.2.1",
+    "start-google-analytics-tracker": "^1.1.1"
   }
 }
